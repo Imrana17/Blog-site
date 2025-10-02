@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BlogSphere Design System - Professional blogging platform with navy and coral theme */
+
+@layer base {
+  :root {
+    /* Primary brand colors */
+    --primary: 222 84% 5%;           /* Deep navy #0f172a */
+    --primary-foreground: 210 40% 98%; /* Light text on navy */
+    
+    /* Background system */
+    --background: 210 40% 98%;       /* Soft off-white #f8fafc */
+    --surface: 0 0% 100%;           /* Pure white for cards */
+    --surface-elevated: 210 33% 96%; /* Subtle elevation */
+    
+    /* Text hierarchy */
+    --foreground: 222 84% 5%;        /* Headings - deep navy */
+    --foreground-secondary: 215 25% 27%; /* Body text - dark gray #334155 */
+    --foreground-muted: 215 16% 47%;  /* Subtle text */
+    
+    /* Accent colors */
+    --coral: 0 100% 71%;            /* Vibrant coral #ff6b6b */
+    --coral-hover: 0 100% 65%;      /* Darker coral for hover */
+    --coral-light: 0 100% 95%;      /* Light coral background */
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(222, 84%, 5%) 0%, hsl(222, 60%, 15%) 100%);
+    --gradient-coral: linear-gradient(135deg, hsl(0, 100%, 71%) 0%, hsl(15, 100%, 65%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(210, 40%, 98%) 0%, hsl(210, 33%, 96%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px hsl(222, 84%, 5%, 0.04);
+    --shadow-md: 0 4px 12px hsl(222, 84%, 5%, 0.08);
+    --shadow-lg: 0 8px 24px hsl(222, 84%, 5%, 0.12);
+    --shadow-coral: 0 4px 16px hsl(0, 100%, 71%, 0.3);
+    
+    /* Component tokens */
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 5%;
+    
+    --border: 214 31% 91%;
+    --input: 214 31% 91%;
+    --ring: 0 100% 71%;
+    
+    /* Legacy shadcn tokens for compatibility */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
+    --secondary: 210 33% 96%;
+    --secondary-foreground: 222 84% 5%;
+    --muted: 210 33% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 0 100% 71%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode using same design tokens */
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 84% 5%;
+    
+    --background: 222 84% 5%;
+    --surface: 222 60% 8%;
+    --surface-elevated: 222 50% 12%;
+    
+    --foreground: 210 40% 98%;
+    --foreground-secondary: 215 20% 75%;
+    --foreground-muted: 215 16% 60%;
+    
+    --coral: 0 100% 71%;
+    --coral-hover: 0 100% 75%;
+    --coral-light: 0 100% 8%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(222, 84%, 5%) 0%, hsl(222, 60%, 8%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(222, 60%, 8%) 0%, hsl(222, 50%, 12%) 100%);
+    
+    --shadow-sm: 0 2px 4px hsl(0, 0%, 0%, 0.2);
+    --shadow-md: 0 4px 12px hsl(0, 0%, 0%, 0.3);
+    --shadow-lg: 0 8px 24px hsl(0, 0%, 0%, 0.4);
+    
+    --card: 222 60% 8%;
+    --card-foreground: 210 40% 98%;
+    --border: 222 50% 15%;
+    --input: 222 50% 15%;
+    --ring: 0 100% 71%;
+    
+    /* Legacy tokens */
+    --popover: 222 60% 8%;
+    --popover-foreground: 210 40% 98%;
+    --secondary: 222 50% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 50% 12%;
+    --muted-foreground: 215 16% 60%;
+    --accent: 0 100% 71%;
+    --accent-foreground: 222 84% 5%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --sidebar-background: 222 60% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 0 100% 71%;
+    --sidebar-primary-foreground: 222 84% 5%;
+    --sidebar-accent: 222 50% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 50% 15%;
+    --sidebar-ring: 0 100% 71%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground-secondary;
+    font-family: 'Arial', Helvetica, sans-serif;
+    line-height: 1.7;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  .font-heading {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .font-body {
+    font-family: 'Arial', Helvetica, sans-serif;
+  }
+}
